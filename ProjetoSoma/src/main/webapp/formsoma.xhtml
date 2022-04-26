@@ -14,9 +14,21 @@
 <body>
 	<h1>Valores</h1>
 	<p>Insira os valores:</p>
+	
 	<h:form>
-		Primeiro valor <h:inputText value = "#{pageBean.n1}"></h:inputText>
-		<h:commandButton value = "Ir para a página" action = "#{pageBean.goTo}"></h:commandButton>
+		Primeiro valor <h:inputText value = "#{pageBeanSoma.n1}"></h:inputText>
+		<h:commandButton value = "Ir para a página" action = "#{pageBeanSoma.goTo}"></h:commandButton>
 	</h:form>
+	
+	<h:form>
+		Segundo valor <h:inputText value = "#{pageBeanSoma.n2}"></h:inputText>
+		<h:commandButton value = "Ir para a página" action = "#{pageBeanSoma.goTo}"></h:commandButton>
+	</h:form>
+	
+	<h:form>
+		Terceiro valor <h:inputText value = "#{pageBeanSoma.n1}"></h:inputText>
+		<h:commandButton value = "Ir para a página" action = "#{pageBeanSoma.goTo}"></h:commandButton>
+	</h:form>
+	
 </body>
 </html>
