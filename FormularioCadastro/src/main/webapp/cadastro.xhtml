@@ -25,18 +25,17 @@
 			Confirmação de Senha:
 			<h:inputText value="#{cadastro.senha2}"/>
 			Sexo:
-			<h:selectOnRadio> 
+			<h:selectOneRadio> 
 				<f:selectItem itemValue="F" itemLabel="Feminino"> </f:selectItem>
 				<f:selectItem itemValue="M" itemLabel="Masculino"> </f:selectItem>
-			</h:selectOnRadio>
+			</h:selectOneRadio>
 			Deseja receber e-mail?
 			<h:selectBooleanCheckbox value="#{cadastro.receberEmail}" /> 
 			Observações:
 			<h:inputTextarea value="#{cadastro.observacoes}" rows="4" cols="30"/>
-			
 			Linguagem de programação:
 			<h:selectManyCheckbox value="#{cadastro.linguagens}">
-				<f:selectItens value="#{cadastro.listaLinguagns}" var="L" itemValue="#{L.id}" itemLabel="#{L.nome}" />				
+				<f:selectItems value="#{cadastro.listaLinguagens}" var="l" itemValue="#{l.id}" itemLabel="#{l.nome}" />				
 			</h:selectManyCheckbox>
 		</h:panelGrid>	
 		

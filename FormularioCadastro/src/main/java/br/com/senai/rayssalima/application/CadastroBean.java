@@ -10,7 +10,7 @@ import br.com.senai.rayssalima.model.Linguagem;
 @Named("cadastro")
 @RequestScoped
 public class CadastroBean implements Serializable{
-	private String name;
+	private String nome;
 	private String email;
 	private String senha1;
 	private String senha2;
@@ -23,11 +23,11 @@ public class CadastroBean implements Serializable{
 		return Linguagem.LINGUAGENS;
 	}
 	
-	public String getName() {
-		return name;
+	public String getNome() {
+		return nome;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 	public String getEmail() {
 		return email;
@@ -70,6 +70,21 @@ public class CadastroBean implements Serializable{
 	}
 	public void setLinguagens(Integer[] linguagens) {
 		this.linguagens = linguagens;
+	}
+	
+	public String getLinguagensAsString() {
+		
+		String str = "";
+		boolean first = true;
+		for (Integer linguagem : linguagens) {
+			if(!first) {
+				str = ",";
+			}
+			str += linguagem;
+			first = false;
+		}
+		
+		return str;
 	}
 
 	
