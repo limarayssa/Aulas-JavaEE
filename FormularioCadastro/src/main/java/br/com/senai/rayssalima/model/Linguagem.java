@@ -12,8 +12,8 @@ public class Linguagem {
 		LINGUAGENS[0] = new Linguagem(1, "Java");
 		LINGUAGENS[1] = new Linguagem(2, "IOS");
 		LINGUAGENS[2] = new Linguagem(3, "C++");
-		LINGUAGENS[3] = new Linguagem(4, "Java");
-		LINGUAGENS[4] = new Linguagem(5, "Java");
+		LINGUAGENS[3] = new Linguagem(4, "C#");
+		LINGUAGENS[4] = new Linguagem(5, "PHP");
 	}
 	
 	public Linguagem(Integer id, String nome) {
