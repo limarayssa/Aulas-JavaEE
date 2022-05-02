@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	lang="pt-br">
+<h:head>
+	<meta http-equi="Content=Type" content="text/html; charset=ISO-8859-1"/>
+	<title>Cadastro Dados Pessoais</title>
+</h:head>
+<body>
+	<h2>Dados Pessoais</h2>
+		<h:form>
+		<h:panelGrid columns="2">
+			<f:facet name="Header">
+				<h2>Dados Pessoais</h2>
+			</f:facet>
+			Nome:
+			<h:inputText value="#{cad.pessoas.nome}"></h:inputText>
+			E-mail:
+			<h:inputText value="#{cad.pessoas.email}"></h:inputText>
+			Data de nascimento:
+			<h:inputText value="#{cad.pessoas.dataNascimento}"></h:inputText>
+			Rua:
+			<h:inputText value="#{cad.pessoas.enderecoResidencial.rua}"></h:inputText>
+			Número:
+			<h:inputText value="#{cad.pessoas.enderecoResidencial.num}"></h:inputText>
+			Complemento:
+			<h:inputText value="#{cad.pessoas.enderecoResidencial.complemento}"></h:inputText>
+			Bairro:
+			<h:inputText value="#{cad.pessoas.enderecoResidencial.bairro}"></h:inputText>
+			CEP:
+			<h:inputText value="#{cad.pessoas.enderecoResidencial.cep}"></h:inputText>
+			Cidade:
+			<h:inputText value="#{cad.pessoas.enderecoResidencial.cidade}"></h:inputText>
+			Estado:
+			<h:selectOneMenu>
+				<f:selectItem value="Selecione" noSelectionOption="true" />
+				<f:selectItems value="#{cad.estados}" var="e" itemValue="#{e.sigla}" itemLabel="#{e.sigla} - #{e.nome}" />
+			</h:selectOneMenu>
+		</h:panelGrid>
+	</h:form>
+	
+	
+</body>
+</html>
