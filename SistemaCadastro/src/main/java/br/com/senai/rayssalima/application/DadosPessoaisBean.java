@@ -3,7 +3,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
-
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
 import br.com.senai.rayssalima.application.states.Interesse;
@@ -11,7 +11,7 @@ import br.com.senai.rayssalima.application.states.Interesse;
 
 @SuppressWarnings("serial")
 @Named("cad")
-@RequestScoped
+@SessionScoped
 public class DadosPessoaisBean implements Serializable{	
 
 private Pessoas pessoas;

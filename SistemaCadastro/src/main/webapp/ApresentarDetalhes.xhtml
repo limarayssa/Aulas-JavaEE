@@ -9,29 +9,31 @@
 <h:head>
 	<meta http-equi="Content=Type" content="text/html; charset=ISO-8859-1"/>
 	<title>Apresentação de Detalhes</title>
+	<h:outputStylesheet library="css" name="style.css" />
 </h:head>
 <body>
+	
 	<h:panelGrid columns = "3" border="1">
 		<h:panelGrid columns="2">
-				<f:facet name="Header">
-					<h2>Dados Pessoais</h2>
+				<f:facet name="header">
+					Dados Pessoais
 				</f:facet>
 				Nome:
-				<h:outputText value="#{cad.pessoas.nome}"></h:outputText>
+				<h:outputText value="#{cad.pessoas.nome}"/>
 				E-mail:
-				<h:outputText value="#{cad.pessoas.email}"></h:outputText>
+				<h:outputText value="#{cad.pessoas.email}"/>
 				Data de nascimento:
-				<h:outputText value="#{cad.pessoas.dataNascimento}"></h:outputText>
+				<h:outputText value="#{cad.pessoas.dataNascimento}"/>
 				Rua:
-				<h:outputText value="#{cad.pessoas.enderecoResidencial.rua}"></h:outputText>
+				<h:outputText value="#{cad.pessoas.enderecoResidencial.rua}"/>
 				Número:
-				<h:outputText value="#{cad.pessoas.enderecoResidencial.num}"></h:outputText>
+				<h:outputText value="#{cad.pessoas.enderecoResidencial.num}"/>
 				Complemento:
-				<h:outputText value="#{cad.pessoas.enderecoResidencial.complemento}"></h:outputText>
+				<h:outputText value="#{cad.pessoas.enderecoResidencial.complemento}"/>
 				Bairro:
-				<h:outputText value="#{cad.pessoas.enderecoResidencial.bairro}"></h:outputText>
+				<h:outputText value="#{cad.pessoas.enderecoResidencial.bairro}"/>
 				CEP:
-				<h:outputText value="#{cad.pessoas.enderecoResidencial.cep}"></h:outputText>
+				<h:outputText value="#{cad.pessoas.enderecoResidencial.cep}"/>
 				Cidade:
 				<h:outputText value="#{cad.pessoas.enderecoResidencial.cidade}" />
 				Estado:
@@ -39,45 +41,44 @@
 				Telefone residencial:
 				<h:outputText value="(#{cad.pessoas.telefoneResidencial.ddd}) #{cad.pessoas.telefoneResidencial.numero}"  />
 				Telefone celular:
-				<h:outputText value="(#cad.pessoas.telefoneCelular.ddd}) #{cad.pessoas.telefoneCelular.numero}"  />
+				<h:outputText value="(#{cad.pessoas.telefoneCelular.ddd}) #{cad.pessoas.telefoneCelular.numero}"  />
 			
 		</h:panelGrid>
 
 		<h:panelGrid>
-				<f:facet name="Header">
-				<h2>Dados Comerciais</h2>
+				<f:facet name="header">
+					Dados Comerciais
 				</f:facet>
 				Nome da Empresa:
-				<h:outputText value="#{cad.pessoas.nomeEmpresa}"></h:outputText>
+				<h:outputText value="#{cad.pessoas.nomeEmpresa}"/>
 				Cargo:
-				<h:outputText value="#{cad.pessoas.cargo}"></h:outputText>
+				<h:outputText value="#{cad.pessoas.cargo}"/>
 				Salário:
 				<h:outputText value="#{cad.pessoas.salario}"> <f:convertNumber type="currency" locale="pt_BR" /> </h:outputText>
 				Rua:
-				<h:outputText value="#{cad.pessoas.enderecoComercial.rua}"></h:outputText>
+				<h:outputText value="#{cad.pessoas.enderecoComercial.rua}"/>
 				Número:
-				<h:outputText value="#{cad.pessoas.enderecoComercial.num}"></h:outputText>
+				<h:outputText value="#{cad.pessoas.enderecoComercial.num}"/>
 				Complemento:
-				<h:outputText value="#{cad.pessoas.enderecoComercial.complemento}"></h:outputText>
+				<h:outputText value="#{cad.pessoas.enderecoComercial.complemento}"/>
 				Bairro:
-				<h:outputText value="#{cad.pessoas.enderecoComercial.bairro}"></h:outputText>
+				<h:outputText value="#{cad.pessoas.enderecoComercial.bairro}"/>
 				CEP:
-				<h:outputText value="#{cad.pessoas.enderecoComercial.cep}"></h:outputText>
+				<h:outputText value="#{cad.pessoas.enderecoComercial.cep}"/>
 				Cidade:
 				<h:outputText value="#{cad.pessoas.enderecoComercial.cidade}" />
 				Estado:
 				<h:outputText value="#{cad.pessoas.enderecoComercial.estado.sigla}" />
 				Telefone comercial:
-				<h:panelGroup>
-				<h:outputText value="#{cad.pessoas.telefoneComercial.ddd}) #{cad.pessoas.telefoneComercial.numero}"  />
-				</h:panelGroup>
+				<h:outputText value="(#{cad.pessoas.telefoneComercial.ddd}) #{cad.pessoas.telefoneComercial.numero}"  />
 		</h:panelGrid>
 		
 		
 		<h:panelGrid columns="1">
-				<f:facet name="Header">
-					<h2>Áreas de Interesse</h2>
+				<f:facet name="header">
+					Áreas de Interesse
 				</f:facet>
+				
 				<h:selectManyCheckbox value="#{cad.pessoas.interesse}" layout="pageDirection" readonly="true">
 					<f:selectItems value="#{cad.interesses}" var="i" itemValue="#{i.id}" itemLabel="#{i.area}"  />
 				</h:selectManyCheckbox>
