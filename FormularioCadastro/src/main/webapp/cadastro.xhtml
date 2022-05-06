@@ -12,7 +12,24 @@
 </h:head>
 <body>
 
-	<h:form> 
+
+	<script>
+		function verificarTelas () {
+			var senha1 = document.getElementById("form:s1").value;
+			var senha2 = document.getElementById("form:s2").value;
+			
+			if (senha1 == senha2) {
+				return true;
+			}
+			
+			alert("As senhas não coincidem!");
+			return false;
+		}
+	</script>
+
+	
+	
+	<h:form id= "form"> 
 		<h:panelGrid columns="2">
 			<f:facet name="header">Cadastro de Usuário</f:facet>
 			
@@ -21,9 +38,9 @@
 			E-mail:
 			<h:inputText value="#{cadastro.email}"/>
 			Senha:
-			<h:inputText value="#{cadastro.senha1}"/>
+			<h:inputText id="s1" value="#{cadastro.senha1}"/>
 			Confirmação de Senha:
-			<h:inputText value="#{cadastro.senha2}"/>
+			<h:inputText id="s2" value="#{cadastro.senha2}"/>
 			Sexo:
 			<h:selectOneRadio> 
 				<f:selectItem itemValue="F" itemLabel="Feminino"> </f:selectItem>
@@ -39,7 +56,7 @@
 			</h:selectManyCheckbox>
 		</h:panelGrid>	
 		
-		<h:commandButton value="Cadastrar" action="info"> </h:commandButton>
+		<h:commandButton value="Cadastrar" action="info" onclick = "return verificarTelas()"> </h:commandButton>
 	</h:form>
 </body>
 </html>
