@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	lang="pt-br">
+<h:head>
+	<meta http-equi="Content=Type" content="text/html; charset=ISO-8859-1"/>
+	<title>Apresentação de Detalhes</title>
+</h:head>
+<body>
+	<h:panelGrid columns = "3" border="1">
+		<h:panelGrid columns="2">
+				<f:facet name="Header">
+					<h2>Dados Pessoais</h2>
+				</f:facet>
+				Nome:
+				<h:outputText value="#{cad.pessoas.nome}"></h:outputText>
+				E-mail:
+				<h:outputText value="#{cad.pessoas.email}"></h:outputText>
+				Data de nascimento:
+				<h:outputText value="#{cad.pessoas.dataNascimento}"></h:outputText>
+				Rua:
+				<h:outputText value="#{cad.pessoas.enderecoResidencial.rua}"></h:outputText>
+				Número:
+				<h:outputText value="#{cad.pessoas.enderecoResidencial.num}"></h:outputText>
+				Complemento:
+				<h:outputText value="#{cad.pessoas.enderecoResidencial.complemento}"></h:outputText>
+				Bairro:
+				<h:outputText value="#{cad.pessoas.enderecoResidencial.bairro}"></h:outputText>
+				CEP:
+				<h:outputText value="#{cad.pessoas.enderecoResidencial.cep}"></h:outputText>
+				Cidade:
+				<h:outputText value="#{cad.pessoas.enderecoResidencial.cidade}" />
+				Estado:
+				<h:outputText value="#{cad.pessoas.enderecoResidencial.estado.sigla}" />
+				Telefone residencial:
+				<h:outputText value="(#{cad.pessoas.telefoneResidencial.ddd}) #{cad.pessoas.telefoneResidencial.numero}"  />
+				Telefone celular:
+				<h:outputText value="(#cad.pessoas.telefoneCelular.ddd}) #{cad.pessoas.telefoneCelular.numero}"  />
+			
+		</h:panelGrid>
+
+		<h:panelGrid>
+				<f:facet name="Header">
+				<h2>Dados Comerciais</h2>
+				</f:facet>
+				Nome da Empresa:
+				<h:outputText value="#{cad.pessoas.nomeEmpresa}"></h:outputText>
+				Cargo:
+				<h:outputText value="#{cad.pessoas.cargo}"></h:outputText>
+				Salário:
+				<h:outputText value="#{cad.pessoas.salario}"> <f:convertNumber type="currency" locale="pt_BR" /> </h:outputText>
+				Rua:
+				<h:outputText value="#{cad.pessoas.enderecoComercial.rua}"></h:outputText>
+				Número:
+				<h:outputText value="#{cad.pessoas.enderecoComercial.num}"></h:outputText>
+				Complemento:
+				<h:outputText value="#{cad.pessoas.enderecoComercial.complemento}"></h:outputText>
+				Bairro:
+				<h:outputText value="#{cad.pessoas.enderecoComercial.bairro}"></h:outputText>
+				CEP:
+				<h:outputText value="#{cad.pessoas.enderecoComercial.cep}"></h:outputText>
+				Cidade:
+				<h:outputText value="#{cad.pessoas.enderecoComercial.cidade}" />
+				Estado:
+				<h:outputText value="#{cad.pessoas.enderecoComercial.estado.sigla}" />
+				Telefone comercial:
+				<h:panelGroup>
+				<h:outputText value="#{cad.pessoas.telefoneComercial.ddd}) #{cad.pessoas.telefoneComercial.numero}"  />
+				</h:panelGroup>
+		</h:panelGrid>
+		
+		
+		<h:panelGrid columns="1">
+				<f:facet name="Header">
+					<h2>Áreas de Interesse</h2>
+				</f:facet>
+				<h:selectManyCheckbox value="#{cad.pessoas.interesse}" layout="pageDirection" readonly="true">
+					<f:selectItems value="#{cad.interesses}" var="i" itemValue="#{i.id}" itemLabel="#{i.area}"  />
+				</h:selectManyCheckbox>
+		</h:panelGrid>
+	</h:panelGrid>
+</body>
+</html>

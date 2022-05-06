@@ -7,6 +7,7 @@ public class Pessoas {
 	private Endereco enderecoResidencial;
 	private Telefone telefoneResidencial;
 	private Telefone telefoneCelular;
+	private Telefone telefoneComercial;
 	private String nomeEmpresa;
 	private Endereco enderecoComercial;
 	private Integer [] interesse;
@@ -78,6 +79,12 @@ public class Pessoas {
 	}
 	public void setSalario(double salario) {
 		this.salario = salario;
+	}
+	public Telefone getTelefoneComercial() {
+		return telefoneComercial;
+	}
+	public void setTelefoneComercial(Telefone telefoneComercial) {
+		this.telefoneComercial = telefoneComercial;
 	}
 	
 	

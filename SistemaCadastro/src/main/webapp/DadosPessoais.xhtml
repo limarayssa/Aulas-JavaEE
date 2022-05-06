@@ -11,35 +11,47 @@
 	<title>Cadastro Dados Pessoais</title>
 </h:head>
 <body>
-	<h2>Dados Pessoais</h2>
 		<h:form>
-		<h:panelGrid columns="2">
-			<f:facet name="Header">
-				<h2>Dados Pessoais</h2>
-			</f:facet>
-			Nome:
-			<h:inputText value="#{cad.pessoas.nome}"></h:inputText>
-			E-mail:
-			<h:inputText value="#{cad.pessoas.email}"></h:inputText>
-			Data de nascimento:
-			<h:inputText value="#{cad.pessoas.dataNascimento}"></h:inputText>
-			Rua:
-			<h:inputText value="#{cad.pessoas.enderecoResidencial.rua}"></h:inputText>
-			Número:
-			<h:inputText value="#{cad.pessoas.enderecoResidencial.num}"></h:inputText>
-			Complemento:
-			<h:inputText value="#{cad.pessoas.enderecoResidencial.complemento}"></h:inputText>
-			Bairro:
-			<h:inputText value="#{cad.pessoas.enderecoResidencial.bairro}"></h:inputText>
-			CEP:
-			<h:inputText value="#{cad.pessoas.enderecoResidencial.cep}"></h:inputText>
-			Cidade:
-			<h:inputText value="#{cad.pessoas.enderecoResidencial.cidade}"></h:inputText>
-			Estado:
-			<h:selectOneMenu>
-				<f:selectItem value="Selecione" noSelectionOption="true" />
-				<f:selectItems value="#{cad.estados}" var="e" itemValue="#{e.sigla}" itemLabel="#{e.sigla} - #{e.nome}" />
-			</h:selectOneMenu>
+			<h:panelGrid columns="2">
+				<f:facet name="Header">
+					<h2>Dados Pessoais</h2>
+				</f:facet>
+				Nome:
+				<h:inputText value="#{cad.pessoas.nome}"></h:inputText>
+				E-mail:
+				<h:inputText value="#{cad.pessoas.email}"></h:inputText>
+				Data de nascimento:
+				<h:inputText value="#{cad.pessoas.dataNascimento}"></h:inputText>
+				Rua:
+				<h:inputText value="#{cad.pessoas.enderecoResidencial.rua}"></h:inputText>
+				Número:
+				<h:inputText value="#{cad.pessoas.enderecoResidencial.num}"></h:inputText>
+				Complemento:
+				<h:inputText value="#{cad.pessoas.enderecoResidencial.complemento}"></h:inputText>
+				Bairro:
+				<h:inputText value="#{cad.pessoas.enderecoResidencial.bairro}"></h:inputText>
+				CEP:
+				<h:inputText value="#{cad.pessoas.enderecoResidencial.cep}"></h:inputText>
+				Cidade:
+				<h:inputText value="#{cad.pessoas.enderecoResidencial.cidade}"></h:inputText>
+				Estado:
+				<h:selectOneMenu value="#{cad.pessoas.enderecoResidencial.estado.sigla}">
+					<f:selectItem itemValue="Selecione" noSelectionOption="true" />
+					<f:selectItems value="#{cad.estados}" var="e" itemValue="#{e.sigla}" itemLabel="#{e.sigla} - #{e.nome}" />
+				</h:selectOneMenu>
+				Telefone residencial:
+				<h:panelGroup>
+					<h:inputText value="#{cad.pessoas.telefoneResidencial.ddd}" size="2" maxlength="2" />
+					<h:inputText value="#{cad.pessoas.telefoneResidencial.numero}" />
+				</h:panelGroup>
+				Telefone celular:
+				<h:panelGroup>
+					<h:inputText value="#{cad.pessoas.telefoneCelular.ddd}" size="2" maxlength="2" />
+					<h:inputText value="#{cad.pessoas.telefoneCelular.numero}" />
+				</h:panelGroup>
+			
+			<h:commandButton value="Próximo" action="DadosComerciais"/>
+			
 		</h:panelGrid>
 	</h:form>
 	

@@ -12,11 +12,16 @@
 </h:head>
 <body>
 	<h:form>
-		<h:panelGrid columns="2">
+		<h:panelGrid columns="1">
 			<f:facet name="Header">
 				<h2>Áreas de Interesse</h2>
 			</f:facet>
+			<h:selectManyCheckbox value="#{cad.pessoas.interesse}" layout="pageDirection">
+				<f:selectItems value="#{cad.interesses}" var="i" itemValue="#{i.id}" itemLabel="#{i.area}"  />
+			</h:selectManyCheckbox>
 			
+		<h:commandButton value="&lt;&lt; Anterior" action="DadosComerciais" />
+		<h:commandButton value="Finalizar" action="ApresentarDetalhes" />
 		</h:panelGrid>
 	</h:form>
 	

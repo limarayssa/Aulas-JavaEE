@@ -6,7 +6,8 @@ public class Interesse {
 	
 	
 	public Interesse(Integer id, String area) {
-
+		this.id = id;
+		this.area = area;
 	}
 	public Interesse() {
 
