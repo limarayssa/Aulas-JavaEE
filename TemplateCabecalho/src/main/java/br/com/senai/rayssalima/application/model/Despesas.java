@@ -1,7 +1,16 @@
 package br.com.senai.rayssalima.application.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+
 public class Despesas {
-//atributos primitivos não podem ser nulos, por isso usamos os wrappers
+//atributos primitivos nï¿½o podem ser nulos, por isso usamos os wrappers
+
+	@Id
+	@GeneratedValue
+private Integer id;
 private String data;
 private String descricao;
 private String valor;
@@ -20,13 +29,17 @@ public Despesas(String data, String descricao, String valor) {
 }
 
 public Despesas() {
-	super();
 	this.data = data;
 	this.descricao = descricao;
 	this.valor = valor;
 }
 
-
+public Integer getId() {
+	return id;
+}
+public void setId(Integer id) {
+	this.id = id;
+}
 public void setData(String data) {
 	this.data = data;
 }

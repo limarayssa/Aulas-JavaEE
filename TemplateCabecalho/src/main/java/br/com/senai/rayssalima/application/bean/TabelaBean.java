@@ -5,15 +5,21 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ejb.Stateless;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 import br.com.senai.rayssalima.application.model.Despesas;
 
-@SuppressWarnings("serial") //tira anuncios de advertência
+@SuppressWarnings("serial") //tira anuncios de advertï¿½ncia
 @Named("tabela")
-@SessionScoped //tempo de vida da página, o "session" mantém os dados enquanto o navegador estiver aberto
+@SessionScoped //tempo de vida da pï¿½gina, o "session" mantï¿½m os dados enquanto o navegador estiver aberto
+@Stateless
 public class TabelaBean implements Serializable{
+	@PersistenceContext
+	private EntityManager em;
 	
 	private List<Despesas> despesas = new ArrayList<>();
 	//lista que trabalha com o jsf
@@ -21,6 +27,22 @@ public class TabelaBean implements Serializable{
 	String desc1;
 	String Valor1;
 	Boolean a = false; 
+	
+	public void inserir (Despesas despesas) {
+		em.persist(despesas);
+	}
+	
+	public void atualizar (Despesas despesas) {
+		em.merge(despesas);
+	}
+	
+	public void excluir (Despesas despesas) {
+		em.remove(despesas);
+	}
+	
+	public Despesas carregar (int id) {
+		return em.find(Despesas.class, id);
+	}
 	
 	
 	public String getData1() {
@@ -46,14 +68,10 @@ public class TabelaBean implements Serializable{
 	public void setValor1(String valor1) {
 		Valor1 = valor1;
 	}
-
-	
-	
-	
 	
 	public String inserir(String data,String desc,String Valor) {
 		
-		Despesas d = new Despesas(data,desc,Valor); //instância da listdatamodel
+		Despesas d = new Despesas(data,desc,Valor); //intÃ¢ncia da listdatamodel
 		d.setEdit(true);
 		a =true;
 		despesas.add(d);
@@ -64,13 +82,13 @@ public class TabelaBean implements Serializable{
 		
 	}
 	
-	public String excluir(Despesas despesa) {
-		
-		despesas.remove(despesa);
-		
-		return null;
-	}
-	
+//	public String excluir(Despesas despesa) {
+//		
+//		despesas.remove(despesa);
+//		
+//		return null;
+//	}
+//	
 	public String editar(Despesas despesa) {
 		despesa.setEdit(true); 
 		
