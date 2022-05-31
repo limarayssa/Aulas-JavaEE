@@ -28,20 +28,36 @@ public class TabelaBean implements Serializable{
 	String Valor1;
 	Boolean a = false; 
 	
-	public void inserir (Despesas despesas) {
-		em.persist(despesas);
+	public String inserir(String data,String desc,Double Valor) {
+		
+		Despesas d = new Despesas(data1,desc1,Valor1); //instância da listdatamodel
+		d.setEdit(true);
+		a =true;
+		despesas.add(d);
+		data1 = null;
+		desc1 = null;
+		Valor1= null;
+		return null;
+		
 	}
 	
-	public void atualizar (Despesas despesas) {
-		em.merge(despesas);
+	public String excluir(Despesas despesa) {
+		
+		despesas.remove(despesa);
+		
+		return null;
 	}
 	
-	public void excluir (Despesas despesas) {
-		em.remove(despesas);
+	public String editar(Despesas despesa) {
+		despesa.setEdit(true); 
+		
+		return null;
 	}
 	
-	public Despesas carregar (int id) {
-		return em.find(Despesas.class, id);
+	public String gravar (Despesas despesa) {
+		despesa.setEdit(false);
+		
+		return null;
 	}
 	
 	
@@ -89,17 +105,6 @@ public class TabelaBean implements Serializable{
 //		return null;
 //	}
 //	
-	public String editar(Despesas despesa) {
-		despesa.setEdit(true); 
-		
-		return null;
-	}
-	
-	public String gravar (Despesas despesa) {
-		despesa.setEdit(false);
-		
-		return null;
-	}
 	
 	public List<Despesas> getDespesas() {
 		return despesas;
