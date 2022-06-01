@@ -1,12 +1,12 @@
 package br.com.senai.rayssalima.model;
 
 public class Linguagem {
-	
+	//instância das variáveis
 	private Integer id;
 	private String nome;
-	
+	//instância da constante
 	public static final Linguagem [] LINGUAGENS;
-	
+	//itens da constante
 	static {
 		LINGUAGENS = new Linguagem[5];
 		LINGUAGENS[0] = new Linguagem(1, "Java");
