@@ -11,6 +11,7 @@ import br.com.senai.rayssalima.model.Linguagem;
 @Named("cadastro")
 //A duração da página é só ate o requerimento, depois ele se destrói
 @RequestScoped
+//serializable converte para bytes 
 public class CadastroBean implements Serializable{
 	private String nome;
 	private String email;
@@ -21,7 +22,7 @@ public class CadastroBean implements Serializable{
 	private String observacoes;
 	private Integer [] linguagens;
 	
-	//lista de objetos
+	//instância da constante
 	public Linguagem [] getListaLinguagens() {
 		return Linguagem.LINGUAGENS;
 	}
