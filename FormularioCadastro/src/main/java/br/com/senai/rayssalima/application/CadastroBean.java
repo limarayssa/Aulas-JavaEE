@@ -75,7 +75,7 @@ public class CadastroBean implements Serializable{
 	public void setLinguagens(Integer[] linguagens) {
 		this.linguagens = linguagens;
 	}
-	
+	// transforma os itens da constante em string
 	public String getLinguagensAsString() {
 		
 		String str = "";
