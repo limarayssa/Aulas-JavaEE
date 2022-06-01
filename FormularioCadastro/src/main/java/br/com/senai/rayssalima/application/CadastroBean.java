@@ -5,9 +5,11 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 
 import br.com.senai.rayssalima.model.Linguagem;
-
+//Tira o amarelinho
 @SuppressWarnings("serial")
+//nome do bean
 @Named("cadastro")
+//A duração da página é só ate o requerimento, depois ele se destrói
 @RequestScoped
 public class CadastroBean implements Serializable{
 	private String nome;
@@ -19,6 +21,7 @@ public class CadastroBean implements Serializable{
 	private String observacoes;
 	private Integer [] linguagens;
 	
+	//lista de objetos
 	public Linguagem [] getListaLinguagens() {
 		return Linguagem.LINGUAGENS;
 	}
