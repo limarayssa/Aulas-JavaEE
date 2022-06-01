@@ -12,8 +12,10 @@
 	<title> Despesas </title>
 </h:head>
 <body>
+//chamada do css na página com as tags do xhtml
 <h:outputStylesheet library = "css" name = "styles.css" /> 
 	<h:form>
+		//caarrega a tabela quando ela não estiver vazia
 		<h:panelGroup rendered="#{tabela.despesas.size() > 0 }">
 			<table class="tabela">
 				<tr>
@@ -23,16 +25,18 @@
 				<tr>
 					<th class="cabecalho"> id </th>
 					<th class="cabecalho"> Data </th>
-					<th class="cabecalho"> Descri��o </th>
+					<th class="cabecalho"> Descrição </th>
 					<th class="cabecalho"> Valor </th>
-					<th class="cabecalho"> Opera��o </th>
+					<th class="cabecalho"> Operação </th>
 				</tr>
-				
+				//d é variavel da lista de despesas
 				<ui:repeat value="#{tabela.despesas}" var="d" varStatus="st">
 					<tr>
+						//id da despesa, adiciona mais um
 						<td class="colNumero">#{st.index +1}</td>
 						
 						<td class="colData">
+							//carrega as opções de edit e excluir caso esteja gravado 
 							<h:outputText value ="#{d.data}" rendered = "#{!d.edit}"/>
 							<h:inputText value ="#{d.data}" rendered = "#{d.edit}"/>
 						</td>
@@ -44,12 +48,14 @@
 						
 						<td class="colValor">
 						<h:outputText value ="#{d.valor}" rendered = "#{!d.edit}">
+							//converte o valor em reais
 							<f:convertNumber type="currency" locale = "pt_BR"> </f:convertNumber>
 						</h:outputText>
 						<h:inputText value ="#{d.valor}" rendered = "#{d.edit}"/>
 						</td>
 						
 						<td class="colOp">
+							//carrega as operações
 							<h:panelGroup rendered="#{!d.edit}">
 								<h:commandLink value="Alterar" action="#{tabela.editar(d)}"></h:commandLink>
 								<h:commandLink value="Excluir" action="#{tabela.excluir(d)}"></h:commandLink>
@@ -61,10 +67,11 @@
 			</table>
 		</h:panelGroup>
 	<br/>
-	
+	//carrega essa mensagem caso não tenha nada na tabela
 	<h:outputText rendered="#{tabela.despesas.size() == 0}" value="Uepa" styleClass="mensagem"> </h:outputText>
 	<br/>
 	<br/>
+		//insere mais um dado na tabela
 	<h:commandButton value="Inserir" action="#{tabela.inserir}"></h:commandButton>
 	</h:form>
 </body>
