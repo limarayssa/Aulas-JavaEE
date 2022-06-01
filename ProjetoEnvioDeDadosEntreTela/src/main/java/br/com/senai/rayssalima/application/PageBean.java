@@ -13,10 +13,11 @@ public class PageBean implements Serializable {
 	private String nome;
 	
 	@Inject
+	//injeta o código do flash
 	private Flash flash;
 	
 	public String processar() {
-		
+		//guarda o valor da variável inserida pelo usuário no flash
 		flash.put("nomeDoUsuario", nome);
 		
 		return "result?faces-redirect=true";
