@@ -12,7 +12,7 @@
 </h:head>
 <body>
 
-
+//javascript usado para validar as senhas
 	<script>
 		function verificarTelas () {
 			var senha1 = document.getElementById("form:s1").value;
@@ -22,24 +22,26 @@
 				return true;
 			}
 			
-			alert("As senhas n„o coincidem!");
+			alert("As senhas n√£o coincidem!");
 			return false;
 		}
 	</script>
 
 	
-	
+	//formul√°rio
 	<h:form id= "form"> 
+		//abre um painel e determina um n√∫mero de colunas
 		<h:panelGrid columns="2">
-			<f:facet name="header">Cadastro de Usu·rio</f:facet>
-			
+			//t√≠tulo
+			<f:facet name="header">Cadastro de Usu√°rio</f:facet>
 			Nome:
+			//cadastro √© o nome do bean
 			<h:inputText value="#{cadastro.nome}"/>
 			E-mail:
 			<h:inputText value="#{cadastro.email}"/>
 			Senha:
 			<h:inputText id="s1" value="#{cadastro.senha1}"/>
-			ConfirmaÁ„o de Senha:
+			Confirma√ß√£o de Senha:
 			<h:inputText id="s2" value="#{cadastro.senha2}"/>
 			Sexo:
 			<h:selectOneRadio> 
@@ -48,13 +50,15 @@
 			</h:selectOneRadio>
 			Deseja receber e-mail?
 			<h:selectBooleanCheckbox value="#{cadastro.receberEmail}" /> 
-			ObservaÁıes:
+			Observa√ß√µes:
 			<h:inputTextarea value="#{cadastro.observacoes}" rows="4" cols="30"/>
-			Linguagem de programaÁ„o:
+			Linguagem de programa√ß√£o:
 			<h:selectManyCheckbox value="#{cadastro.linguagens}">
+				//puxa os valores da lista 
 				<f:selectItems value="#{cadastro.listaLinguagens}" var="l" itemValue="#{l.id}" itemLabel="#{l.nome}" />				
 			</h:selectManyCheckbox>
 		</h:panelGrid>	
+		
 		
 		<h:commandButton value="Cadastrar" action="info" onclick = "return verificarTelas()"> </h:commandButton>
 	</h:form>
