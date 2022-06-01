@@ -14,7 +14,7 @@
 <body>
 	<h:panelGrid columns="2">
 		<f:facet name="header">
-			Cadastro de Usu·rio
+			Cadastro de Usu√°rio
 		</f:facet>
 		<h:outputText value = "Nome:"/>
 		<h:outputText value = "#{cadastro.nome}"/>
@@ -25,21 +25,23 @@
 		<h:outputText value = "Senha:"/>
 		<h:outputText value = "#{cadastro.senha1}"/>
 		
-		<h:outputText value = "ConfirmaÁ„o de senha:"/>
+		<h:outputText value = "Confirma√ß√£o de senha:"/>
 		<h:outputText value = "#{cadastro.senha2}"/>
 		
 		<h:outputText value = "Sexo:"/>
+		
+		//o rendered carrega um atributo dependendo de uma condi√ß√£o, muda a tela conforme alguma escolh do usu√°rio
 		<h:outputText value = "Masculino" rendered = "#{cadastro.sexo == M}"/>
 		<h:outputText value = "Feminino" rendered = "#{cadastro.sexo == F}"/>
 		
 		<h:outputText value = "Deseja receber e-mail?:"/>
 		<h:outputText value = "sim" rendered = "#{cadastro.receberEmail}"/>
-		<h:outputText value = "n„o" rendered = "#{!cadastro.receberEmail == F}"/>
+		<h:outputText value = "n√£o" rendered = "#{!cadastro.receberEmail == F}"/>
 		
-		<h:outputText value = "ObservaÁıes:"/>
+		<h:outputText value = "Observa√ß√µes:"/>
 		<h:outputText value = "#{cadastro.observacoes}"/>
 		
-		<h:outputText value = "Linguagens de programaÁ„o:"/>
+		<h:outputText value = "Linguagens de programa√ß√£o:"/>
 		<h:outputText value = "#{cadastro.linguagensAsString}"/>
 		
 	</h:panelGrid>
