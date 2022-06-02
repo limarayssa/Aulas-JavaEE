@@ -24,7 +24,8 @@ public class PageBean implements Serializable {
 		this.page = page;
 	} 	
 
-	
+	//retorna a página específica quando digitar o respectivo caractere
+	//do contrário, não retorna nada
 	public Pages goTo() {
 		
 		if ("a".equals(page)) {
