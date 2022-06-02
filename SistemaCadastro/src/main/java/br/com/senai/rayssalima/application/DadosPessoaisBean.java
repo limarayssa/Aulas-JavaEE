@@ -15,7 +15,7 @@ import br.com.senai.rayssalima.application.states.Interesse;
 public class DadosPessoaisBean implements Serializable{	
 
 private Pessoas pessoas;
-
+//atribui os dados ao objeto pessoa
 public Pessoas getPessoas() {
 	if (pessoas == null) {
 		pessoas = new Pessoas();
