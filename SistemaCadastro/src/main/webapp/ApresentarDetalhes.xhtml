@@ -8,11 +8,11 @@
 	lang="pt-br">
 <h:head>
 	<meta http-equi="Content=Type" content="text/html; charset=ISO-8859-1"/>
-	<title>Apresentação de Detalhes</title>
+	<title>ApresentaÃ§Ã£o de Detalhes</title>
 	<h:outputStylesheet library="css" name="style.css" />
 </h:head>
 <body>
-	
+	//apresenta os dados na tela
 	<h:panelGrid columns = "3" border="1">
 		<h:panelGrid columns="2">
 				<f:facet name="header">
@@ -26,7 +26,7 @@
 				<h:outputText value="#{cad.pessoas.dataNascimento}"/>
 				Rua:
 				<h:outputText value="#{cad.pessoas.enderecoResidencial.rua}"/>
-				Número:
+				NÃºmero:
 				<h:outputText value="#{cad.pessoas.enderecoResidencial.num}"/>
 				Complemento:
 				<h:outputText value="#{cad.pessoas.enderecoResidencial.complemento}"/>
@@ -53,11 +53,11 @@
 				<h:outputText value="#{cad.pessoas.nomeEmpresa}"/>
 				Cargo:
 				<h:outputText value="#{cad.pessoas.cargo}"/>
-				Salário:
+				SalÃ¡rio:
 				<h:outputText value="#{cad.pessoas.salario}"> <f:convertNumber type="currency" locale="pt_BR" /> </h:outputText>
 				Rua:
 				<h:outputText value="#{cad.pessoas.enderecoComercial.rua}"/>
-				Número:
+				NÃºmero:
 				<h:outputText value="#{cad.pessoas.enderecoComercial.num}"/>
 				Complemento:
 				<h:outputText value="#{cad.pessoas.enderecoComercial.complemento}"/>
@@ -76,7 +76,7 @@
 		
 		<h:panelGrid columns="1">
 				<f:facet name="header">
-					Áreas de Interesse
+					Ãreas de Interesse
 				</f:facet>
 				
 				<h:selectManyCheckbox value="#{cad.pessoas.interesse}" layout="pageDirection" readonly="true">
