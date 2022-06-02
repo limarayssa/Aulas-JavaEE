@@ -8,14 +8,15 @@
 	lang="pt-br">
 <h:head>
 	<meta http-equi="Content=Type" content="text/html; charset=ISO-8859-1"/>
-	<title>Navegação</title>
+	<title>NavegaÃ§Ã£o</title>
 </h:head>
 
 <body>
 	<h1>Page Bean</h1>
 	<h:form>
-		Página <h:inputText value = "#{pageBean.page}"></h:inputText>
-		<h:commandButton value = "Ir para a página" action = "#{pageBean.goTo}"></h:commandButton>
+		//encaminha para a pÃ¡gina escolhida
+		PÃ¡gina <h:inputText value = "#{pageBean.page}"></h:inputText>
+		<h:commandButton value = "Ir para a pÃ¡gina" action = "#{pageBean.goTo}"></h:commandButton>
 	</h:form>
 </body>
 </html>
