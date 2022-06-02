@@ -1,7 +1,7 @@
 package br.com.senai.rayssalima.application;
 
 public class Telefone {
-	
+	//enum determinando o dd e numero de telefone
 	enum Tipotelefone {
 		FIXO, CELULAR;
 	}
