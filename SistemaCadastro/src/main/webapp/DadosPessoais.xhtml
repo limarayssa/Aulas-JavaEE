@@ -36,14 +36,14 @@
 				Cidade:
 				<h:inputText value="#{cad.pessoas.enderecoResidencial.cidade}"></h:inputText>
 				Estado:
-				//constante com os estados, possibilitando escolher sigla ou estado
+				<!-- constante com os estados, possibilitando escolher sigla ou estado -->
 				<h:selectOneMenu value="#{cad.pessoas.enderecoResidencial.estado.sigla}">
 					<f:selectItem itemValue="Selecione" noSelectionOption="true" />
 					<f:selectItems value="#{cad.estados}" var="e" itemValue="#{e.sigla}" itemLabel="#{e.sigla} - #{e.nome}" />
 				</h:selectOneMenu>
 				Telefone residencial:
 				<h:panelGroup>
-				//limita o número de máximo de caracteres a 2
+				<!-- limita o número de máximo de caracteres a 2 -->
 					<h:inputText value="#{cad.pessoas.telefoneResidencial.ddd}" size="2" maxlength="2" />
 					<h:inputText value="#{cad.pessoas.telefoneResidencial.numero}" />
 				</h:panelGroup>
