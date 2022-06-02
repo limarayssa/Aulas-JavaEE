@@ -8,15 +8,16 @@
 	lang="pt-br">
 <h:head>
 	<meta http-equi="Content=Type" content="text/html; charset=ISO-8859-1"/>
-	<title>Áreas de Interesse</title>
+	<title>Ãreas de Interesse</title>
 	<h:outputStylesheet library="css" name="style.css" />
 </h:head>
 <body>
 	<h:form>
 		<h:panelGrid columns="1">
 			<f:facet name="Header">
-				<h2>Áreas de Interesse</h2>
+				<h2>Ãreas de Interesse</h2>
 			</f:facet>
+			//constante com as Ã¡reas de interesse
 			<h:selectManyCheckbox value="#{cad.pessoas.interesse}" layout="pageDirection">
 				<f:selectItems value="#{cad.interesses}" var="i" itemValue="#{i.id}" itemLabel="#{i.area}"  />
 			</h:selectManyCheckbox>
