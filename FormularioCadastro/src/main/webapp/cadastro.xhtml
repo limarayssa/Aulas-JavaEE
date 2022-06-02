@@ -35,7 +35,8 @@
 			<!-- título -->
 			<f:facet name="header">Cadastro de Usuário</f:facet>
 			Nome:
-			//cadastro é o nome do bean
+			<!-- cadastro é o nome do bean -->
+			<!-- input é um campo onde o usuário digita texto -->
 			<h:inputText value="#{cadastro.nome}"/>
 			E-mail:
 			<h:inputText value="#{cadastro.email}"/>
@@ -54,7 +55,7 @@
 			<h:inputTextarea value="#{cadastro.observacoes}" rows="4" cols="30"/>
 			Linguagem de programação:
 			<h:selectManyCheckbox value="#{cadastro.linguagens}">
-				//puxa os valores da lista 
+				<!-- puxa os valores da lista  -->
 				<f:selectItems value="#{cadastro.listaLinguagens}" var="l" itemValue="#{l.id}" itemLabel="#{l.nome}" />				
 			</h:selectManyCheckbox>
 		</h:panelGrid>	
