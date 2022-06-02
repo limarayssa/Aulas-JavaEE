@@ -13,22 +13,22 @@ public class LoginBean implements Serializable{
 
 	private String nome;
 	private String senha;
-	
+	//mensagem após a construção
 	@PostConstruct
 	public void onCreate() {
 		System.out.println("Bean criado");
 	}
-	
+	//mensagem antes de ser destruído
 	@PreDestroy
 	public void onDestroy () {
 		System.out.println("Bean será destruído");
 	}
-
+	//valor estático de login
 	public String doLogin() {
 		if ("abc".equals(nome) && "123".equals(senha)) {
 			return "sucesso";
 		}
-		
+		//retornar vazio se os valores estiverem errado
 		return null;
 	}
 	
